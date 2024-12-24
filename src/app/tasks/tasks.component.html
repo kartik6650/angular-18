@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-12 mx-2">
+        <h6 >Task 1</h6>
+        <input type="radio" name="selectedGender" [(ngModel)]="selectedGender"  value="Male">Male
+    </div>
+    <div class="col-12 mx-2">
+        <input type="radio" name="selectedGender" [(ngModel)]="selectedGender"  value="Female">Female
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+<p *ngIf ="selectedGender == 'Male'">Male Selected</p>
+<p *ngIf ="selectedGender == 'Female'">Female Selected</p>
+    </div>
+</div>
+
+
+<!-- task 2 -->
+<br><br><br><br><br><br><br><br><br>
+
+<div class="row">
+    <div class="col-3 bg-danger p-3 mx-2">
+        <div class="col-3 ">
+            mobile
+        </div>
+    </div>
+    <div class="col-3 bg-success pt-3 mx-2" (click)="laptopp(true)" >
+        <div  class="col-3 ">
+            laptop
+        </div>
+        <p *ngIf="isSelected === true">HP, Dell</p>
+    </div>
+    <div class="col-3 bg-danger pt-3 mx-2 " (click)="cameraa(true)">
+        <div class="col-3 ">
+            camera
+        </div>
+        <p *ngIf="isSelected1 === true">nikon, canon</p>
+    </div>
+    <div class="row">
+        <div class="col-3">
+
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,51 @@
+<div class="container-fluid overflow-hidden">
+    <div class="row g-0 vh-100 overflow-y-auto">
+        <div class="col-2 col-sm-3 col-xl-2 d-flex fixed-top" id="sidebar">
+            <div class="d-flex flex-column flex-grow-1 align-items-center align-items-sm-start bg-dark px-2 px-sm-3 py-2 text-white vh-100 overflow-auto">
+                <a href="/" class="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5">D<span class="d-none d-sm-inline">ashboard</span></span>
+                </a>
+                <ul class="nav nav-pills flex-column flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link px-sm-0 px-2">
+                            <i class="fa-solid fa-house icon me-4"></i>
+<span class="ms-1 d-none d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-sm-0 px-2">
+                            <i class="fa-solid fa-bag-shopping icon me-4"></i><span class="ms-1 d-none d-sm-inline">Orders</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-sm-0 px-2 text-truncate">
+                            <i class="fa-solid fa-user icon me-4"></i><span class="ms-1 d-none d-sm-inline">Customers</span> </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-sm-0 px-2 text-truncate">
+                            <i class="fa-regular fa-address-book icon me-4"></i><span class="ms-1 d-none d-sm-inline">Contact</span> </a>
+                    </li>
+                </ul>
+                <div class="dropup py-sm-4 py-1 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="hugenerd" width="28" height="28" class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-1">Joe</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark px-0 px-sm-2 text-center text-sm-start" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item px-1" href="#"><i class="fs-6 bi-basket"></i><span class="d-none d-sm-inline ps-1">New project</span></a></li>
+                        <li><a class="dropdown-item px-1" href="#"><i class="fs-6 bi-bookmark"></i><span class="d-none d-sm-inline ps-1">Settings</span></a></li>
+                        <li><a class="dropdown-item px-1" href="#"><i class="fs-6 bi-binoculars"></i><span class="d-none d-sm-inline ps-1">Profile</span></a></li>
+                        <li><a class="dropdown-item px-1" href="#"><i class="fa-solid fa-right-from-bracket icon"></i><span class="d-none d-sm-inline ps-1" (click)="logout()">Log Out</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <highcharts-chart
+id="container" 
+[Highcharts]="Highcharts"
+[constructorType]="chartConstructor"
+[options]="chartOptions"
+ style="width: 100%; height: 700px; display: block;">
+</highcharts-chart>
+
+    </div>
+</div>

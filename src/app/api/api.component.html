@@ -1,0 +1,122 @@
+<app-home></app-home>
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="row">
+            <div class="col-5">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>User -Id</th>
+                            <th>ID</th>
+                            <th>TITLE</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        @for (item of data; track $index) {
+                            <tr>
+                                <td>{{item.userId}}</td>
+                                <td>{{item.id}}</td>
+                                <td>{{item.title}}</td>
+                            </tr>
+                        }
+        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-lg-12 col-md-12">
+<div class="card">
+   <div class="card-body p-0 pb-4">
+    <div class="card-header color">
+        <h5>List</h5>
+            </div>
+            <div class="card-body pt-0">
+        <div class="row">
+           @for (item of data; track $index) {
+                <div class="col-sm-12 col-md-6 col-lg-4 mt-5">
+                    {{item.id}}
+            <div class="card custom-card" >
+              <div class="card-body ">
+                <h5 class="card-title">{{item.title}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">subtitle -- {{item.userId}}</h6>
+                <p class="card-text custom-text">{{item.body}}</p>
+                <a  class="card-link "><button (click)="onEdit(item)" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="btn btn-success btn-sm">Edit</button></a>
+                <a  class="card-link"><button class="btn btn-danger btn-sm" (click)="onDelete(item.id)">Delete</button></a>
+              </div>
+            </div>
+                </div>
+           }
+        </div>
+            </div>
+   </div>
+</div>
+        </div>
+        
+
+    </div>
+</div>
+
+
+
+<div class="offcanvas offcanvas-end" style="background-color: #ce9fff;" 
+     tabindex="-1" 
+     id="offcanvasRight" 
+     aria-labelledby="offcanvasRightLabel" 
+     data-bs-backdrop="static" 
+     data-bs-keyboard="false">
+  
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel">Update and Delete</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body position-relative">
+    <div class="col-12 h-100">
+      <div class="card h-100">
+        <div class="card-header color" >
+          <h5>New List Form</h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 mb-3">
+              <label>User Id</label>
+              <input type="text" [(ngModel)]="object.userId" class="form-control">
+            </div>
+            <div class="col-12 mb-3">
+              <label>Id</label>
+              <input type="text" [(ngModel)]="object.id" class="form-control">
+            </div>
+            <div class="col-12 mb-3">
+              <label>Title</label>
+              <input type="text" [(ngModel)]="object.title" class="form-control">
+            </div>
+            <div class="col-12 mb-3">
+              <label>Body</label>
+              <textarea class="form-control" [(ngModel)]="object.body"></textarea>
+            </div>
+            
+          </div>
+        </div>
+      
+      <div class="container ">
+        <div class="row pt-3">
+          <div class="col-6">
+            <button class="btn btn-danger position-absolute bottom-0 start-0 mx-4 my-3">Reset</button>
+          </div>
+          <div class="col-6 text-end">
+            <button *ngIf="!object.id" class="btn btn-success position-absolute bottom-0 end-0 mx-4  my-3" (click)="save()">Save</button>
+            <button *ngIf="object.id" class="btn btn-success position-absolute bottom-0 end-0 mx-4 my-3" (click)="updateList()">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

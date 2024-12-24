@@ -1,0 +1,21 @@
+
+.nav-item .collapse.show,
+.nav-item .collapsing {
+    background-color: #152e4d;
+    border-radius: 5px;
+    min-width: 100px;
+    max-height: 150px;
+    overflow-y: auto;
+    position: fixed;
+    margin-top: -20px;
+    margin-left: 80px;
+}
+
+.dropdown-menu {
+    min-width: 40px;
+}
+.icon::before{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+}
